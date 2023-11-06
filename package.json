@@ -6,7 +6,12 @@
   "repository": "https://github.com/EdSpurrier/ADM6002.git",
   "author": "EdSpurrier <ed@edspurrier.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "express": "^4.18.2"
+    "connect-livereload": "^0.6.1",
+    "express": "^4.18.2",
+    "livereload": "^0.9.3"
   }
 }
