@@ -1,0 +1,341 @@
+* {
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none; }
+
+html, body {
+  width: 1070px;
+  height: 800px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }
+
+#outputVideo {
+  z-index: 0; }
+
+#game-canvas {
+  z-index: 5; }
+
+.z {
+  z-index: 10; }
+
+#loose-game, #win-game {
+  z-index: 11; }
+
+.z {
+  z-index: 12; }
+
+.z {
+  z-index: 13; }
+
+.z {
+  z-index: 14; }
+
+.z {
+  z-index: 15; }
+
+#black-out {
+  z-index: 20; }
+
+.z {
+  z-index: 21; }
+
+#game-blur, #game-pause-blur {
+  z-index: 22; }
+
+.z {
+  z-index: 23; }
+
+#game-hud, #score-counter-bg {
+  z-index: 24; }
+
+#score-counter {
+  z-index: 25; }
+
+#view-game, #time-extended, #time-extended-text {
+  z-index: 30; }
+
+#black-out {
+  z-index: 40; }
+
+#intro-logo, #intro-presents, #chomper-logo,
+#instructions, #logo-lockup, #warning, #reset-button, .count-down,
+#level-label, #level-counter, #well-done, #you-loose, #game-won {
+  z-index: 41; }
+
+#game-won-score-text {
+  z-index: 50; }
+
+#motion-track-overlay {
+  z-index: 60; }
+
+.z {
+  z-index: 90; }
+
+#motion-control-helper {
+  z-index: 100; }
+
+/*
+
+@font-face {
+	font-family: fiatadvert01arg;
+	src: url(fiatadvert01-webfont.eot);
+	src: url(fiatadvert01-webfont.eot?#iefix) format("embedded-opentype"), url(fiatadvert01-webfont.woff2) format("woff2"), url(fiatadvert01-webfont.woff) format("woff"), url(fiatadvert01-webfont.ttf) format("truetype"), url(fiatadvert01-webfont.svg#fiatadvert01arg) format("svg");
+	font-weight: 400;
+	font-style: normal
+}
+*/
+#fps {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000; }
+
+#game-canvas {
+  position: absolute;
+  top: -0px;
+  left: 0; }
+
+#game-hud {
+  position: absolute;
+  width: 1070px;
+  height: 800px;
+  top: 0;
+  left: 0;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s; }
+  #game-hud.time-running-out {
+    background-color: rgba(255, 0, 0, 0.2); }
+    #game-hud.time-running-out #game-timer {
+      font-family: Tahoma, Geneva, sans-serif;
+      font-weight: 600;
+      text-shadow: -2px -2px 0 #cb2600, -2px -1px 0 #cb2600, -2px 0px 0 #cb2600, -2px 1px 0 #cb2600, -2px 2px 0 #cb2600, -1px -2px 0 #cb2600, -1px -1px 0 #cb2600, -1px 0px 0 #cb2600, -1px 1px 0 #cb2600, -1px 2px 0 #cb2600, 0px -2px 0 #cb2600, 0px -1px 0 #cb2600, 0px 0px 0 #cb2600, 0px 1px 0 #cb2600, 0px 2px 0 #cb2600, 1px -2px 0 #cb2600, 1px -1px 0 #cb2600, 1px 0px 0 #cb2600, 1px 1px 0 #cb2600, 1px 2px 0 #cb2600, 2px -2px 0 #cb2600, 2px -1px 0 #cb2600, 2px 0px 0 #cb2600, 2px 1px 0 #cb2600, 2px 2px 0 #cb2600;
+      color: white; }
+    #game-hud.time-running-out.big-timer #game-timer {
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      top: 5px;
+      margin-left: -105px;
+      left: 50%;
+      width: 210px;
+      height: 80px;
+      text-align: center;
+      line-height: 78px;
+      font-size: 70px; }
+  #game-hud #logo-lockup {
+    position: absolute;
+    width: 100px;
+    right: 10px;
+    bottom: 10px; }
+  #game-hud #game-score-text, #game-hud #game-combo, #game-hud #game-timer {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: 600;
+    text-shadow: -2px -2px 0 #0b9e2d, -2px -1px 0 #0b9e2d, -2px 0px 0 #0b9e2d, -2px 1px 0 #0b9e2d, -2px 2px 0 #0b9e2d, -1px -2px 0 #0b9e2d, -1px -1px 0 #0b9e2d, -1px 0px 0 #0b9e2d, -1px 1px 0 #0b9e2d, -1px 2px 0 #0b9e2d, 0px -2px 0 #0b9e2d, 0px -1px 0 #0b9e2d, 0px 0px 0 #0b9e2d, 0px 1px 0 #0b9e2d, 0px 2px 0 #0b9e2d, 1px -2px 0 #0b9e2d, 1px -1px 0 #0b9e2d, 1px 0px 0 #0b9e2d, 1px 1px 0 #0b9e2d, 1px 2px 0 #0b9e2d, 2px -2px 0 #0b9e2d, 2px -1px 0 #0b9e2d, 2px 0px 0 #0b9e2d, 2px 1px 0 #0b9e2d, 2px 2px 0 #0b9e2d;
+    color: white;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+  #game-hud #game-score-text, #game-hud #game-combo {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 40px; }
+  #game-hud #game-combo {
+    display: none !important; }
+  #game-hud #game-timer {
+    background-image: url("../images/timer-bg.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 15px;
+    margin-left: -95px;
+    left: 50%;
+    width: 190px;
+    height: 60px;
+    text-align: center;
+    line-height: 58px;
+    font-size: 50px; }
+  #game-hud #score-bar {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -269px; }
+  #game-hud #score-counter-bg, #game-hud #score-counter {
+    position: absolute;
+    width: 120px;
+    left: 10px;
+    bottom: 50%;
+    margin-bottom: -133px;
+    display: none !important; }
+  #game-hud #score-counter {
+    height: 0px;
+    position: absolute;
+    background-image: url("../images/score-counter-fg.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    -moz-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s; }
+
+#outputVideo, #motion-track-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -o-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+  border: 1px solid white; }
+
+#motion-control-helper {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  display: none;
+  /*	#motion-line {
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		height: 400px;
+  		width: 1px;
+  		background-color: greenyellow;
+  	}*/
+  	/*.motion-area {
+  		position: absolute;
+  		top: 0;
+  		@include Opacity(0.5);
+  		height: 400px;
+  	}
+  
+  	#left-motion-area {
+  		left: 0;
+  		height: 400px;
+  		width: 65px;
+  		background: blue;
+  	}
+  
+  	#center-motion-area {
+  		left: 65px;
+  		height: 400px;
+  		width: 30px;
+  		background: red;
+  	}
+  
+  	#right-motion-area {
+  		left: 95px;
+  		height: 400px;
+  		width: 65px;
+  		background: blue;
+  	}*/ }
+
+.view {
+  display: none;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  width: 1070px;
+  height: 800px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+#view-game #time-extended-text, #view-game #time-extended, #view-game #game-won-score-text, #view-game #level-counter, #view-game #level-label, #view-game .count-down, #view-game .instruction, #view-game #chomper-logo, #view-game #intro-presents, #view-game #intro-logo, #view-game #black-out, #view-game #game-pause-blur, #view-game #game-blur, #view-game #instructions, #view-game .count-down {
+  position: absolute;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0; }
+#view-game #time-extended-text, #view-game #time-extended, #view-game #game-won-score-text, #view-game #level-counter, #view-game #level-label, #view-game .count-down, #view-game .instruction, #view-game #chomper-logo, #view-game #intro-presents, #view-game #intro-logo, #view-game #game-pause-blur, #view-game #game-blur, #view-game #instructions, #view-game .count-down {
+  top: 50%;
+  left: 50%; }
+#view-game #time-extended-text, #view-game #game-won-score-text, #view-game #game-won-score-text {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: 600;
+  text-shadow: -3px -3px 0 #0b9e2d, -3px -2px 0 #0b9e2d, -3px -1px 0 #0b9e2d, -3px 0px 0 #0b9e2d, -3px 1px 0 #0b9e2d, -3px 2px 0 #0b9e2d, -3px 3px 0 #0b9e2d, -2px -3px 0 #0b9e2d, -2px -2px 0 #0b9e2d, -2px -1px 0 #0b9e2d, -2px 0px 0 #0b9e2d, -2px 1px 0 #0b9e2d, -2px 2px 0 #0b9e2d, -2px 3px 0 #0b9e2d, -1px -3px 0 #0b9e2d, -1px -2px 0 #0b9e2d, -1px -1px 0 #0b9e2d, -1px 0px 0 #0b9e2d, -1px 1px 0 #0b9e2d, -1px 2px 0 #0b9e2d, -1px 3px 0 #0b9e2d, 0px -3px 0 #0b9e2d, 0px -2px 0 #0b9e2d, 0px -1px 0 #0b9e2d, 0px 0px 0 #0b9e2d, 0px 1px 0 #0b9e2d, 0px 2px 0 #0b9e2d, 0px 3px 0 #0b9e2d, 1px -3px 0 #0b9e2d, 1px -2px 0 #0b9e2d, 1px -1px 0 #0b9e2d, 1px 0px 0 #0b9e2d, 1px 1px 0 #0b9e2d, 1px 2px 0 #0b9e2d, 1px 3px 0 #0b9e2d, 2px -3px 0 #0b9e2d, 2px -2px 0 #0b9e2d, 2px -1px 0 #0b9e2d, 2px 0px 0 #0b9e2d, 2px 1px 0 #0b9e2d, 2px 2px 0 #0b9e2d, 2px 3px 0 #0b9e2d, 3px -3px 0 #0b9e2d, 3px -2px 0 #0b9e2d, 3px -1px 0 #0b9e2d, 3px 0px 0 #0b9e2d, 3px 1px 0 #0b9e2d, 3px 2px 0 #0b9e2d, 3px 3px 0 #0b9e2d;
+  color: white; }
+#view-game #game-won-score-text {
+  width: 1000px;
+  margin-left: -500px;
+  line-height: 40px;
+  margin-top: -85px;
+  font-size: 80px;
+  text-align: center; }
+#view-game #time-extended-text {
+  width: 1000px;
+  margin-left: -500px;
+  line-height: 90px;
+  margin-top: -140px;
+  font-size: 100px;
+  text-align: center;
+  color: #00ff30; }
+#view-game #time-extended {
+  margin-top: -30px;
+  margin-left: -300px; }
+#view-game #countdown-1 {
+  margin-left: -241px;
+  margin-top: -85px; }
+#view-game #countdown-2 {
+  margin-left: -145px;
+  margin-top: -85px; }
+#view-game #countdown-3 {
+  margin-left: -308px;
+  margin-top: -122px; }
+#view-game #level-label {
+  margin-left: -265px;
+  margin-top: -175px; }
+#view-game #level-counter {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: 600;
+  text-shadow: -4px -4px 0 #0066ff, -4px -3px 0 #0066ff, -4px -2px 0 #0066ff, -4px -1px 0 #0066ff, -4px 0px 0 #0066ff, -4px 1px 0 #0066ff, -4px 2px 0 #0066ff, -4px 3px 0 #0066ff, -4px 4px 0 #0066ff, -3px -4px 0 #0066ff, -3px -3px 0 #0066ff, -3px -2px 0 #0066ff, -3px -1px 0 #0066ff, -3px 0px 0 #0066ff, -3px 1px 0 #0066ff, -3px 2px 0 #0066ff, -3px 3px 0 #0066ff, -3px 4px 0 #0066ff, -2px -4px 0 #0066ff, -2px -3px 0 #0066ff, -2px -2px 0 #0066ff, -2px -1px 0 #0066ff, -2px 0px 0 #0066ff, -2px 1px 0 #0066ff, -2px 2px 0 #0066ff, -2px 3px 0 #0066ff, -2px 4px 0 #0066ff, -1px -4px 0 #0066ff, -1px -3px 0 #0066ff, -1px -2px 0 #0066ff, -1px -1px 0 #0066ff, -1px 0px 0 #0066ff, -1px 1px 0 #0066ff, -1px 2px 0 #0066ff, -1px 3px 0 #0066ff, -1px 4px 0 #0066ff, 0px -4px 0 #0066ff, 0px -3px 0 #0066ff, 0px -2px 0 #0066ff, 0px -1px 0 #0066ff, 0px 0px 0 #0066ff, 0px 1px 0 #0066ff, 0px 2px 0 #0066ff, 0px 3px 0 #0066ff, 0px 4px 0 #0066ff, 1px -4px 0 #0066ff, 1px -3px 0 #0066ff, 1px -2px 0 #0066ff, 1px -1px 0 #0066ff, 1px 0px 0 #0066ff, 1px 1px 0 #0066ff, 1px 2px 0 #0066ff, 1px 3px 0 #0066ff, 1px 4px 0 #0066ff, 2px -4px 0 #0066ff, 2px -3px 0 #0066ff, 2px -2px 0 #0066ff, 2px -1px 0 #0066ff, 2px 0px 0 #0066ff, 2px 1px 0 #0066ff, 2px 2px 0 #0066ff, 2px 3px 0 #0066ff, 2px 4px 0 #0066ff, 3px -4px 0 #0066ff, 3px -3px 0 #0066ff, 3px -2px 0 #0066ff, 3px -1px 0 #0066ff, 3px 0px 0 #0066ff, 3px 1px 0 #0066ff, 3px 2px 0 #0066ff, 3px 3px 0 #0066ff, 3px 4px 0 #0066ff, 4px -4px 0 #0066ff, 4px -3px 0 #0066ff, 4px -2px 0 #0066ff, 4px -1px 0 #0066ff, 4px 0px 0 #0066ff, 4px 1px 0 #0066ff, 4px 2px 0 #0066ff, 4px 3px 0 #0066ff, 4px 4px 0 #0066ff;
+  color: white;
+  line-height: 120px;
+  font-size: 150px;
+  width: 200px;
+  margin-left: -100px;
+  left: 50%;
+  margin-top: 0px;
+  text-align: center; }
+#view-game .instruction {
+  cursor: pointer;
+  width: 600px;
+  margin-left: -300px;
+  margin-top: -300px; }
+#view-game #black-out {
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  width: 1070px;
+  height: 800px; }
+#view-game #intro-logo {
+  width: 400px;
+  margin-left: -200px;
+  margin-top: -85px; }
+#view-game #intro-presents {
+  width: 240px;
+  margin-left: -120px;
+  margin-top: -19px; }
+#view-game #chomper-logo {
+  width: 350px;
+  margin-left: -175px;
+  margin-top: -210px; }
+
+#end-game #loose-game, #end-game #win-game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0; }

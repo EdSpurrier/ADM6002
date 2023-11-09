@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chomper!</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/vendor/zepto.min.js"></script>
+	<script src="js/vendor/TweenMax.min.js"></script>
+</head>
+
+
+
+<body>
+
+		<audio id="audio-eat">
+			<source src='audio/eat.mp3' type="audio/mpeg">
+		</audio>
+
+		<audio id="audio-alarm">
+			<source src='audio/alarm.mp3' type="audio/mpeg">
+		</audio>
+
+		<audio id="audio-burp">
+			<source src='audio/burp.mp3' type="audio/mpeg">
+		</audio>
+
+		<audio id="audio-spew">
+			<source src='audio/spew.mp3' type="audio/mpeg">
+		</audio>
+
+
+		<audio id="audio-beep">
+			<source src='audio/beep.mp3' type="audio/mpeg">
+		</audio>
+
+		<canvas id="game-canvas" width="1070" height="800"></canvas>
+
+		<div id="game-hud" class="">
+			<div id="game-timer">0:15</div>
+			<div id="game-combo">COMBO x<span>0</span></div>
+			<div id="game-score-text"></div>
+			<img id="score-counter-bg" src="images/score-counter-bg.png" alt="Score-counter"/>
+			<div id="score-counter"></div>
+			<img id="logo-lockup" src="images/chomper-logo.png" />
+		</div>
+
+
+
+		<div id="view-game" class="view">
+			<div id="black-out"></div>
+			<img id="intro-logo" src="images/intro-logo.jpg" />
+			<img id="intro-presents" src="images/intro-presents.png" />
+			<img id="chomper-logo" src="images/chomper-logo.png" />
+
+			<img id="warning" class="instruction" src="images/warning.png" />
+			<img id="reset-button" class="instruction" src="images/reset-button.png" />
+
+			<img id="instructions" class="instruction" src="images/instructions.png" alt="Instructions"/>
+
+			<div id="time-extended-text">+5</div>
+			<img id="time-extended" class="" src="images/time-extended.png" />
+
+			<img id="countdown-1" class="count-down" src="images/count-down-1.png" alt="1"/>
+			<img id="countdown-2" class="count-down" src="images/count-down-2.png" alt="2"/>
+			<img id="countdown-3" class="count-down" src="images/count-down-3.png" alt="3"/>
+
+			<img id="level-label" src="images/level.png" />
+			<div id="level-counter">0</div>
+
+			<img id="well-done" class="instruction" src="images/well-done.png" />
+			<img id="you-loose" class="instruction" src="images/you-loose.png" />
+			<img id="game-won" class="instruction" src="images/you-won.png" />
+			<div id="game-won-score-text"></div>
+		</div>
+
+
+		<div id="motion-control-helper">
+			<div id="motion-line"></div>
+			<div id="left-motion-area" class="motion-area"></div>
+			<div id="center-motion-area" class="motion-area"></div>
+			<div id="right-motion-area" class="motion-area"></div>
+		</div>
+
+		<canvas id="inputVideo" width="600" height="400" style="display:none"></canvas>
+		<video id="outputVideo" autoplay="" loop="" width="1070" height="800" src=""></video>
+		<canvas id="motion-track-overlay" width="1070" height="800" style="display:none"></canvas>
+
+
+
+	<script src="js/siteCore.js"></script>
+
+</body>
+</html>
